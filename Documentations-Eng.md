@@ -82,7 +82,7 @@ Below is the list of supported event types and their associated actions:
 ### 6\. Setting
 
 *   **Actions:**
-    *   change_password_
+    *   change_password
     *   edit_info
     *   check_balance
     *   change_language
@@ -105,7 +105,7 @@ Below is the list of supported event types and their associated actions:
 
 * * *
 
-Integration Instructions
+Integration Instruction Example with JavaScript
 ------------------------
 
 ### 1\. Listening to Events:
@@ -120,9 +120,23 @@ Create a handler function to process incoming events based on the type and actio
 
 **Example:** 
 ```javascript 
-function handleEvent(event) { switch (event.type) { case 'payment': handlePaymentEvent(event); break; case 'game': handleGameEvent(event); break; // Add other cases as needed default: console.warn('Unknown event type:', event.type); } }
+function handleEvent(event) {
+   switch (event.type)
+      {
+         case 'payment': handlePaymentEvent(event);
+         break;
+         case 'game': handleGameEvent(event);
+         break;
+         // Add other cases as needed
+         default: console.warn('Unknown event type:', event.type);
+       }
+ }
 
-function handlePaymentEvent(event) { if (event.action === 'withdraw') { console.log('Processing withdrawal:', event.description); // Perform frontend logic for withdrawal } };
+function handlePaymentEvent(event) {
+   if (event.action === 'withdraw') {
+      console.log('Processing withdrawal:', event.description); // Perform frontend logic for withdrawal
+       }
+};
 ```
 
 ### 3\. Sending Events:
